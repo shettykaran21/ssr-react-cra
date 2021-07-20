@@ -7,4 +7,5 @@ import configureStore from './redux/configureStore';
 const initialState = global.window && global.window.__INITIAL_STATE__;
 const store = configureStore(initialState);
 
-ReactDOM.hydrate(<App store={store} />, document.getElementById('root'));
+const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+renderMethod(<App store={store} />, document.getElementById('root'));
