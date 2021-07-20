@@ -1,14 +1,13 @@
-const React = require('react');
-const renderToString = require('react-dom/server').renderToString;
-const matchPath = require('react-router').matchPath;
-const path = require('path');
-const fs = require('fs');
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { matchPath } from 'react-router';
+import path from 'path';
+import fs from 'fs';
 
-const configureStore = require('../../src/redux/configureStore').default;
+import App from '../../src/App';
+import configureStore from '../../src/redux/configureStore';
 
 const initialState = {};
-
-const App = require('../../src/App').default;
 
 exports = module.exports;
 

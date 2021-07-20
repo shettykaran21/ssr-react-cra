@@ -2,9 +2,9 @@ import express from 'express';
 import path from 'path';
 import Loadable from 'react-loadable';
 
-const PORT = 3000;
+import renderer from './helpers/renderer';
 
-const renderer = require('./helpers/renderer');
+const PORT = 3000;
 const routes = ['/', '/users'];
 
 const app = express();
