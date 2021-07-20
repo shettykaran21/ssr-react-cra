@@ -5,12 +5,14 @@ import Loadable from 'react-loadable';
 import Home from './components/Home';
 
 const UsersList = Loadable({
-  loader: () => import('./components/UsersList'),
+  loader: () =>
+    import(/* webpackChunkName: "UsersList" */ './components/UsersList'),
   loading: () => <div>Loading...</div>,
 });
 
 const NotFound = Loadable({
-  loader: () => import('./components/NotFound'),
+  loader: () =>
+    import(/* webpackChunkName: "NotFound" */ './components/NotFound'),
   loading: () => <div>Loading...</div>,
 });
 

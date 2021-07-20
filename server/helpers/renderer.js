@@ -6,15 +6,7 @@ const fs = require('fs');
 
 const configureStore = require('../../src/redux/configureStore').default;
 
-const initialState = {
-  todos: [
-    {
-      id: 0,
-      text: 'Task in initialState from server',
-      completed: false,
-    },
-  ],
-};
+const initialState = {};
 
 const App = require('../../src/App').default;
 
