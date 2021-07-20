@@ -1,3 +1,4 @@
+import Loadable from 'react-loadable';
 const express = require('express');
 const path = require('path');
 
@@ -15,4 +16,12 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.use(reactRenderer.render(routes));
 
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+Loadable.preloadAll().then(() => {
+  app.listen(PORT, (error) => {
+    if (error) {
+      return console.log('something bad happened', error);
+    }
+
+    console.log(`Listening on ${PORT}...`);
+  });
+});
